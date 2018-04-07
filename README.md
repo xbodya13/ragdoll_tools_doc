@@ -42,7 +42,7 @@ Generate hitboxes
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img1.png"><br><br>
 </div>
 
-This operator generates hitboxes  from visible bones of the selected armatures if you in **Object Mode** or from visible bones of the active armature only if you in **Pose mode**
+This operator generates hitboxes  from visible bones of the selected armatures if you in **Object Mode** or from visible bones of the active armature only if you in **Pose mode** .
 You can change size and shape of the generated hitboxes by pressing   ``F6``.
 
 
@@ -50,7 +50,7 @@ By default,after generation hitboxes connects with the correspondent bones.
 If some bones are already connected , hitboxes will not be generated for them.
 
 
-**What does connection means**
+**What does the connection means**
 
 When bone and hitbox are connected in hitbox rigid body settings appears property **Follow bone**.
 
