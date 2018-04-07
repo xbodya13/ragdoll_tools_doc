@@ -8,7 +8,7 @@ About
 Tools for making ragdoll
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img0.png"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img0.PNG"><br><br>
 </div>
 
 
@@ -22,7 +22,7 @@ Getting started
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img8.png"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img8.PNG"><br><br>
 </div>
 
 
@@ -60,7 +60,7 @@ If some bones are already connected , hitboxes will not be generated for them.
 When bone and hitbox are connected in hitbox rigid body settings appears property **Follow bone**.
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img9.png"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img9.PNG"><br><br>
 </div>
 
 If it is checked the hit box copies the movement of the bone and if not the bone copies the movement of the hitbox.
