@@ -1,13 +1,8 @@
-.. IAMGREATPROLISOK documentation master file, created by
-   sphinx-quickstart on Thu Apr  5 15:53:05 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 About
 ============================================
-Tools for making ragdoll
+**Ragdoll tools** is an addon for generating ragdolls in Blender
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img0.PNG"><br><br>
 </div>
 
@@ -21,7 +16,7 @@ Getting started
 * Setup scene like this and select armature.
 
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img8.PNG"><br><br>
 </div>
 
@@ -43,7 +38,7 @@ Generate hitboxes
 
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Generate hitboxes**
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img1.png"><br><br>
 </div>
 
@@ -59,7 +54,7 @@ If some bones are already connected , hitboxes will not be generated for them.
 
 When bone and hitbox are connected in hitbox rigid body settings appears property **Follow bone**.
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img9.PNG"><br><br>
 </div>
 
@@ -76,7 +71,7 @@ Connect existing objects to the bones
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Connect**
 
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img2.png"><br><br>
 </div>
 
@@ -99,7 +94,7 @@ Generate rigid body contraints
 
 
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img5.png"><br><br>
 </div>
 
@@ -115,7 +110,7 @@ Bake
 
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Bake**
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img4.png"><br><br>
 </div>
 
@@ -130,7 +125,7 @@ Disconnect  hitboxes from the bones
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Disconnect**
 
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img3.png"><br><br>
 </div>
 
@@ -144,7 +139,7 @@ Set rigid body settings
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Set rigid body settings**
 
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img6.png"><br><br>
 </div>
 
@@ -157,7 +152,7 @@ Set rigid body constraint settings
 
 
 
-<div align="center">
+<div align="left">
 <img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img7.png"><br><br>
 </div>
 
