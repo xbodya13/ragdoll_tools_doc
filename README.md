@@ -8,7 +8,7 @@ About
 Tools for making ragdoll
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img0.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img0.png"><br><br>
 </div>
 
 
@@ -22,7 +22,7 @@ Getting started
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img8.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img8.png"><br><br>
 </div>
 
 
@@ -44,7 +44,7 @@ Generate hitboxes
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Generate hitboxes**
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img1.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img1.png"><br><br>
 </div>
 
 This operator generates hitboxes  from visible bones of the selected armatures if you in **Object Mode** or from visible bones of the active armature only if you in **Pose mode**
@@ -60,7 +60,7 @@ If some bones are already connected , hitboxes will not be generated for them.
 When bone and hitbox are connected in hitbox rigid body settings appears property **Follow bone**.
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img9.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img9.png"><br><br>
 </div>
 
 If it is checked the hit box copies the movement of the bone and if not the bone copies the movement of the hitbox.
@@ -77,7 +77,7 @@ Connect existing objects to the bones
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img2.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img2.png"><br><br>
 </div>
 
 
@@ -100,7 +100,7 @@ Generate rigid body contraints
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img5.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img5.png"><br><br>
 </div>
 
 
@@ -116,7 +116,7 @@ Bake
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Bake**
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img4.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img4.png"><br><br>
 </div>
 
 
@@ -131,7 +131,7 @@ Disconnect  hitboxes from the bones
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img3.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img3.png"><br><br>
 </div>
 
 
@@ -145,7 +145,7 @@ Set rigid body settings
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img6.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img6.png"><br><br>
 </div>
 
 This operator modifies  rigid body settings of selected objects
@@ -158,7 +158,7 @@ Set rigid body constraint settings
 
 
 <div align="center">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img7.PNG"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img7.png"><br><br>
 </div>
 
 
