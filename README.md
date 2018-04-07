@@ -7,8 +7,10 @@ About
 ============================================
 Tools for making ragdoll
 
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img0.PNG"><br><br>
+</div>
 
-.. image:: img0.png
 
 
 Getting started
@@ -19,8 +21,9 @@ Getting started
 * Setup scene like this and select armature.
 
 
-.. image:: img8.png
-
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img8.PNG"><br><br>
+</div>
 
 
 
@@ -40,7 +43,9 @@ Generate hitboxes
 
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Generate hitboxes**
 
-.. image:: img1.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img1.PNG"><br><br>
+</div>
 
 This operator generates hitboxes  from visible bones of the selected armatures if you in **Object Mode** or from visible bones of the active armature only if you in **Pose mode**
 You can change size and shape of the generated hitboxes by pressing   ``F6``.
@@ -54,7 +59,9 @@ If some bones are already connected , hitboxes will not be generated for them.
 
 When bone and hitbox are connected in hitbox rigid body settings appears property **Follow bone**.
 
-.. image:: img9.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img9.PNG"><br><br>
+</div>
 
 If it is checked the hit box copies the movement of the bone and if not the bone copies the movement of the hitbox.
 
@@ -69,7 +76,9 @@ Connect existing objects to the bones
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Connect**
 
 
-.. image:: img2.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img2.PNG"><br><br>
+</div>
 
 
 
@@ -90,7 +99,9 @@ Generate rigid body contraints
 
 
 
-.. image:: img5.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img5.PNG"><br><br>
+</div>
 
 
 
@@ -104,8 +115,9 @@ Bake
 
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Bake**
 
-
-.. image:: img4.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img4.PNG"><br><br>
+</div>
 
 
 This operator bakes visual transformations into keyframes for connected hitboxes and bones.
@@ -118,7 +130,9 @@ Disconnect  hitboxes from the bones
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Disconnect**
 
 
-.. image:: img3.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img3.PNG"><br><br>
+</div>
 
 
 This operator deletes helpers, drivers and constraints that maintained connection of hitboxes and bones and optionally removes hitboxes
@@ -130,7 +144,9 @@ Set rigid body settings
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Set rigid body settings**
 
 
-.. image:: img6.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img6.PNG"><br><br>
+</div>
 
 This operator modifies  rigid body settings of selected objects
 
@@ -141,7 +157,9 @@ Set rigid body constraint settings
 
 
 
-.. image:: img7.png
+<div align="center">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img7.PNG"><br><br>
+</div>
 
 
 This operator modifies  rigid body settings of selected objects
