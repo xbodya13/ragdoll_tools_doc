@@ -64,7 +64,7 @@ Here how they looks:
 
 
 
-To generate hitboxes from bones you should select at least one armature and set **Generate from :** to **Bones**
+To generate hitboxes from bones you should select at least one armature and set **Generate from** to **Bones**
 Hitboxes generated this way can have box or capsule shape.
 
 If you in **Object Mode** all visible bones of all selected armatures are involved in generation.
