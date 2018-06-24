@@ -153,7 +153,7 @@ Disconnect  hitboxes from the bones
 
 
 <div align="left">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img3.png"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/s3.png"><br><br>
 </div>
 
 
