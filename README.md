@@ -39,11 +39,36 @@ Generate hitboxes
 ``Spacebar`` -> **Ragdoll tools pie menu** -> **Generate hitboxes**
 
 <div align="left">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img1.png"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/s1.png"><br><br>
 </div>
 
-This operator generates hitboxes  from visible bones of the selected armatures if you in **Object Mode** or from visible bones of the active armature only if you in **Pose mode** .
-You can change size and shape of the generated hitboxes by pressing   ``F6``.
+
+This operator generates hitboxes from mesh object or bones.
+
+To generate hitboxes from mesh you should select exactly one mesh object and at least one armature, then set **Generate from :** to **Mesh**
+Hitbox shape is based on vertex group,so your mesh should have vertex group with the same names as bones in armatures have,otherwise,nothing happens.
+If yor model already parented to armature,you have it.And if not ,you can get them py parenting your object to armature with automatic weights,for example.
+
+Output hitbox shape can be of several different types.
+
+Here how they looks:
+
+
+
+<div align="left">
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/modes.png"><br><br>
+</div>
+
+
+
+
+To generate hitboxes from bones you should select at least one armature and set **Generate from :** to **Bones**
+Hitboxes generated this way can have box or capsule shape.
+
+If you in **Object Mode** all visible bones of all selected armatures are involved in generation.
+If you in **Pose mode** , only visible bones of active armature are involved.
+
+You can change size and shape of the generated hitboxes by pressing   ``F6`` after you call operator.
 
 
 By default,after generation hitboxes connects with the correspondent bones.
@@ -95,7 +120,7 @@ Generate rigid body contraints
 
 
 <div align="left">
-<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/img5.png"><br><br>
+<img   src= "https://raw.githubusercontent.com/xbodya13/random/master/s2.png"><br><br>
 </div>
 
 
