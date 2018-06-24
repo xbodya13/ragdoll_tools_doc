@@ -45,7 +45,8 @@ Generate hitboxes
 
 This operator generates hitboxes from mesh object or bones.
 
-To generate hitboxes from mesh you should select exactly one mesh object and at least one armature, then set **Generate from :** to **Mesh**
+To generate hitboxes from mesh you should select exactly one mesh object and at least one armature, then set **Generate from :** to **Mesh** .
+
 Hitbox shape is based on vertex group,so your mesh should have vertex group with the same names as bones in armatures have,otherwise,nothing happens.
 If yor model already parented to armature,you have it.And if not ,you can get them py parenting your object to armature with automatic weights,for example.
 
