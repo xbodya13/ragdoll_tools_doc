@@ -1,0 +1,150 @@
+.. Ragdoll Tools documentation master file, created by
+   sphinx-quickstart on Fri May  1 18:31:15 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Ragdoll Tools documentation!
+=======================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+.. |test| image:: test.png
+   :width: 100%
+.. |search| image:: search.png
+
+.. |model| image:: model.jpg
+
+.. |pie_menu| image:: pie_menu.png
+.. |hitboxes| image:: hitboxes.jpg
+.. |shapes| image:: shapes.jpg
+.. |from_bones| image:: from_bones.jpg
+.. |monkey| image:: monkey.jpg
+.. |hitboxes_final| image:: hitboxes_final.jpg
+.. |follow_bone| image:: follow_bone.png
+.. |constraints| image:: constraints.png
+.. |pie_menu_setters| image:: pie_menu_setters.png
+.. |bake| image:: bake.png
+.. |clear| image:: clear.png
+
+
+
+
+
+Ragdoll tools is an addon for generating ragdolls in Blender.
+
+All its functions are collected in one pie menu
+
+|pie_menu|
+
+It can be found in the search popup
+
+|search|
+
+
+Hitboxes
+========
+
+To start with, take some model which is attached to armature
+
+|model|
+
+Select model and its armature and run **Generate hitboxes** operator from the pie menu
+
+The result should look like this
+
+|hitboxes|
+
+You can adjust shape of the hitboxes via the operator settings
+
+|shapes|
+
+If you wish,you can also generate hitboxes from the bones using same operator.
+
+|from_bones|
+
+Also you can take any mesh object and connect it to any bone as hitbox.
+
+|monkey|
+
+To do this,select object, then go to the **Pose Mode** ,select bone ,and run **Connect** operator from the pie menu.
+
+So,no matter which method you choose,now you have a bunch of hitboxes connected to the bones.
+
+|hitboxes_final|
+
+What mean that connection?
+==========================
+Every bone follows its hitbox if they are connected...or hitbox follows the bone.It depends on the **Follow bone** property of each hitbox.
+
+This property can be found in the physics tab.
+
+|follow_bone|
+
+You can change it for all selected objects at once if you hold the ``Alt`` during change (this works for almost any property in Blender)
+
+To animate some property on selected objects use this `addon <https://github.com/xbodya13/keyframe_selected>`_
+
+Constraints
+===========
+If you run the simulation right now,everything just falls apart.
+
+To make a ragdoll you need to connect all these hitboxes with constraints.
+
+To do this ,select all hitboxes and call **Generate rigid body constraints** operator from the pie menu
+
+|constraints|
+
+
+For good result you may need to adjust physical properties of the hitboxes and constraints.
+
+These operators can be helpful to set that properties for all selected objects at once.
+
+|pie_menu_setters|
+
+To see constraint limits in viewport ,install this `addon <https://github.com/xbodya13/visual_limits>`_
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/OIR-dPWI-Ak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+When you're done with constraints,it's time to run simulation
+
+
+Bake
+====
+
+Once you're satisfied with the animation of the ragdoll,it's time to bake it to the bones.
+
+You can do it using **Bake** operator.
+
+|bake|
+
+It also can be used to copy animation from bones to hitboxes.Just make hitboxes follow bones and chose **Hitboxes animation bake** in operator settings.
+
+Disconnect
+==========
+If you no longer need hitboxes, select them or their bones and run **Disconnect** operator
+
+|clear|
+
+
+Videos
+======
+Check out these videos to see it all in action.
+
+They were made in Blender 2.79 but the workflow is the same for Blender 2.8x
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/H70pNBjUKaE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/YqKo6gtr7Ac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+
