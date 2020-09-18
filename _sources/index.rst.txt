@@ -12,137 +12,191 @@ Welcome to Ragdoll Tools documentation!
 
 .. |test| image:: test.png
    :width: 100%
-.. |search| image:: search.png
-
-.. |model| image:: model.jpg
 
 .. |pie_menu| image:: pie_menu.png
-.. |hitboxes| image:: hitboxes.jpg
-.. |shapes| image:: shapes.jpg
-.. |from_bones| image:: from_bones.jpg
-.. |monkey| image:: monkey.jpg
-.. |hitboxes_final| image:: hitboxes_final.jpg
-.. |follow_bone| image:: follow_bone.png
+
+.. |search| image:: search.png
+.. |shapes| image:: shapes.png
+.. |vertex_groups| image:: vertex_groups.png
+.. |bones| image:: bones.png
 .. |constraints| image:: constraints.png
-.. |pie_menu_setters| image:: pie_menu_setters.png
-.. |bake| image:: bake.png
-.. |clear| image:: clear.png
-
-
+.. |constraints_selected_to_active| image:: constraints_selected_to_active.png
+.. |limits| image:: limits.gif
+.. |rbc| image:: rbc.png
+.. |animated| image:: animated.png
+.. |animated_pie| image:: animated_pie.png
+.. |bake_hitboxes| image:: bake_hitboxes.png
+.. |simulation_start| image:: simulation_start.png
+.. |dynamic| image:: dynamic.png
+.. |bake_bones| image:: bake_bones.png
+.. |collisions| image:: collisions.png
 
 
 
 Ragdoll tools is an addon for generating ragdolls in Blender.
 
-All its functions are collected in one pie menu
+All its function  are collected in one pie menu.
 
 |pie_menu|
+
 
 It can be found in the search popup
 
 |search|
 
 
+
+To make a ragdoll you need two things:
+
+1.Generate hitboxes
+
+2.Connect them with rigid body constraints
+
+
+
+
 Hitboxes
 ========
-
-To start with, take some model which is attached to armature
-
-|model|
-
-Select model and its armature and run **Generate hitboxes** operator from the pie menu
-
-The result should look like this
-
-|hitboxes|
-
-You can adjust shape of the hitboxes via the operator settings
+To make hitboxes from mesh you need to select mesh object ,armature and run **Make hitboxes** operator from pie menu.
+Here's how hitboxes look like with different operator settings.
 
 |shapes|
 
-If you wish,you can also generate hitboxes from the bones using same operator.
+Hitbox shape depends on vertex groups.
 
-|from_bones|
+|vertex_groups|
 
-Also you can take any mesh object and connect it to any bone as hitbox.
+If some bones don't have vertex groups,try to create them automatically using **Make vertex groups** operator.
 
-|monkey|
 
-To do this,select object, then go to the **Pose Mode** ,select bone ,and run **Connect** operator from the pie menu.
+Also,you can generate hitboxes from bones.
 
-So,no matter which method you choose,now you have a bunch of hitboxes connected to the bones.
+|bones|
 
-|hitboxes_final|
+Or just take any objects and connect them to the bones using **Connect** operator.
+Each object will be connected to the nearest bone.
 
-What mean that connection?
-==========================
-Every bone follows its hitbox if they are connected...or hitbox follows the bone.It depends on the **Follow bone** property of each hitbox.
 
-This property can be found in the physics tab.
 
-|follow_bone|
-
-You can change it for all selected objects at once if you hold the ``Alt`` during change (this works for almost any property in Blender)
-
-To animate some property on selected objects use this `addon <https://github.com/xbodya13/keyframe_selected>`_
 
 Constraints
 ===========
-If you run the simulation right now,everything just falls apart.
-
-To make a ragdoll you need to connect all these hitboxes with constraints.
-
-To do this ,select all hitboxes and call **Generate rigid body constraints** operator from the pie menu
+Select hitboxes and run **Make constraints** operator
 
 |constraints|
 
+.. tip::
+   Since hitboxes are connected to the bones it doesn't matter whether you select hitboxes or their bones in pose mode,operator will work.
+   Same is true for other operators from ragdoll pie menu.
 
-For good result you may need to adjust physical properties of the hitboxes and constraints.
 
-These operators can be helpful to set that properties for all selected objects at once.
+By default, constraints are generated according to the bones hierarchy.
+If bones are not parented to each other ,use different mode. **Selected to active** ,for example
 
-|pie_menu_setters|
+|constraints_selected_to_active|
 
-To see constraint limits in viewport ,install this `addon <https://github.com/xbodya13/visual_limits>`_
+
+To set up constraint limits run **Set limits operator** and move hitboxes.
+
+|limits|
+
+When you are done,press ``Esc``
+
+Also you can copy rigid body constraint settings from active to selected using corresponding operator.
+Adjust copied properties in operator settings,if needed.
+
+
+|rbc|
+
+Animation
+=========
+Suppose,you have a model with animation and you want to enable ragdoll at some frame.
+
+
+
+
+At first,you need to copy animation from bones to hitboxes.
+
+To do that,make hitboxes follow bones and make them animated.
+
+|animated|
+
+
+.. tip::
+   Hold ``Alt`` when you are changing this property , to change it on all selected objects at once.
+   Use this `addon <https://github.com/xbodya13/keyframe_selected>`_  to animate it on selected objects.
+
+   Also,you can manipulate this property from pie menu
+
+   |animated_pie|
+
+
+
+
+Bake hitboxes animation using **Bake** operator from pie menu and make bones follow them again.
+
+|bake_hitboxes|
+
+Snap constraints at the first frame of simulation.
+
+|simulation_start|
+
+
+.. tip::
+   If you snapped constraint or change other physical property and this didn't affect simulation as expected,try to run **Clear cache** operator
+
+
+
+Disable **Animated** property at some frame
+
+
+|dynamic|
+
+.. important::
+   Make sure that animation doesn't violate constraint limits at this frame.
+
+
+
+
+
+Bake physics.
+
+
+
+Bake bones animation.
+
+
+|bake_bones|
+
+
+
+.. important::
+   Avoid hitbox intersections,if they are not connected with constraint.
+   If they are,you can disable collisions in constraint properties
+   |collisions|
+
+
+
+Video
+=====
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/OIR-dPWI-Ak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/lobKcsbQqSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
-When you're done with constraints,it's time to run simulation
+Files used in video:
+
+`sample_static.blend <https://github.com/xbodya13/random/raw/master/sample_static.blend>`_
+
+`sample_animated.blend <https://github.com/xbodya13/random/raw/master/sample_animated.blend>`_
 
 
-Bake
-====
-
-Once you're satisfied with the animation of the ragdoll,it's time to bake it to the bones.
-
-You can do it using **Bake** operator.
-
-|bake|
-
-It also can be used to copy animation from bones to hitboxes.Just make hitboxes follow bones and chose **Hitboxes animation bake** in operator settings.
-
-Disconnect
-==========
-If you no longer need hitboxes, select them or their bones and run **Disconnect** operator
-
-|clear|
 
 
-Videos
-======
-Check out these videos to see it all in action.
 
-They were made in Blender 2.79 but the workflow is the same for Blender 2.8x
 
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/H70pNBjUKaE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/YqKo6gtr7Ac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 

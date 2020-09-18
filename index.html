@@ -88,11 +88,9 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to Ragdoll Tools documentation!</a></li>
 <li><a class="reference internal" href="#hitboxes">Hitboxes</a></li>
-<li><a class="reference internal" href="#what-mean-that-connection">What mean that connection?</a></li>
 <li><a class="reference internal" href="#constraints">Constraints</a></li>
-<li><a class="reference internal" href="#bake">Bake</a></li>
-<li><a class="reference internal" href="#disconnect">Disconnect</a></li>
-<li><a class="reference internal" href="#videos">Videos</a></li>
+<li><a class="reference internal" href="#animation">Animation</a></li>
+<li><a class="reference internal" href="#video">Video</a></li>
 </ul>
 </div>
             
@@ -161,67 +159,89 @@
 <div class="toctree-wrapper compound">
 </div>
 <p>Ragdoll tools is an addon for generating ragdolls in Blender.</p>
-<p>All its functions are collected in one pie menu</p>
+<p>All its function  are collected in one pie menu.</p>
 <p><img alt="pie_menu" src="_images/pie_menu.png" /></p>
 <p>It can be found in the search popup</p>
 <p><img alt="search" src="_images/search.png" /></p>
+<p>To make a ragdoll you need two things:</p>
+<p>1.Generate hitboxes</p>
+<p>2.Connect them with rigid body constraints</p>
 </div>
 <div class="section" id="hitboxes">
 <h1>Hitboxes<a class="headerlink" href="#hitboxes" title="Permalink to this headline">¶</a></h1>
-<p>To start with, take some model which is attached to armature</p>
-<p><img alt="model" src="_images/model.jpg" /></p>
-<p>Select model and its armature and run <strong>Generate hitboxes</strong> operator from the pie menu</p>
-<p>The result should look like this</p>
-<p><img alt="hitboxes" src="_images/hitboxes.jpg" /></p>
-<p>You can adjust shape of the hitboxes via the operator settings</p>
-<p><img alt="shapes" src="_images/shapes.jpg" /></p>
-<p>If you wish,you can also generate hitboxes from the bones using same operator.</p>
-<p><img alt="from_bones" src="_images/from_bones.jpg" /></p>
-<p>Also you can take any mesh object and connect it to any bone as hitbox.</p>
-<p><img alt="monkey" src="_images/monkey.jpg" /></p>
-<p>To do this,select object, then go to the <strong>Pose Mode</strong> ,select bone ,and run <strong>Connect</strong> operator from the pie menu.</p>
-<p>So,no matter which method you choose,now you have a bunch of hitboxes connected to the bones.</p>
-<p><img alt="hitboxes_final" src="_images/hitboxes_final.jpg" /></p>
-</div>
-<div class="section" id="what-mean-that-connection">
-<h1>What mean that connection?<a class="headerlink" href="#what-mean-that-connection" title="Permalink to this headline">¶</a></h1>
-<p>Every bone follows its hitbox if they are connected…or hitbox follows the bone.It depends on the <strong>Follow bone</strong> property of each hitbox.</p>
-<p>This property can be found in the physics tab.</p>
-<p><img alt="follow_bone" src="_images/follow_bone.png" /></p>
-<p>You can change it for all selected objects at once if you hold the <code class="docutils literal notranslate"><span class="pre">Alt</span></code> during change (this works for almost any property in Blender)</p>
-<p>To animate some property on selected objects use this <a class="reference external" href="https://github.com/xbodya13/keyframe_selected">addon</a></p>
+<p>To make hitboxes from mesh you need to select mesh object ,armature and run <strong>Make hitboxes</strong> operator from pie menu.
+Here’s how hitboxes look like with different operator settings.</p>
+<p><img alt="shapes" src="_images/shapes.png" /></p>
+<p>Hitbox shape depends on vertex groups.</p>
+<p><img alt="vertex_groups" src="_images/vertex_groups.png" /></p>
+<p>If some bones don’t have vertex groups,try to create them automatically using <strong>Make vertex groups</strong> operator.</p>
+<p>Also,you can generate hitboxes from bones.</p>
+<p><img alt="bones" src="_images/bones.png" /></p>
+<p>Or just take any objects and connect them to the bones using <strong>Connect</strong> operator.
+Each object will be connected to the nearest bone.</p>
 </div>
 <div class="section" id="constraints">
 <h1>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h1>
-<p>If you run the simulation right now,everything just falls apart.</p>
-<p>To make a ragdoll you need to connect all these hitboxes with constraints.</p>
-<p>To do this ,select all hitboxes and call <strong>Generate rigid body constraints</strong> operator from the pie menu</p>
+<p>Select hitboxes and run <strong>Make constraints</strong> operator</p>
 <p><img alt="constraints" src="_images/constraints.png" /></p>
-<p>For good result you may need to adjust physical properties of the hitboxes and constraints.</p>
-<p>These operators can be helpful to set that properties for all selected objects at once.</p>
-<p><img alt="pie_menu_setters" src="_images/pie_menu_setters.png" /></p>
-<p>To see constraint limits in viewport ,install this <a class="reference external" href="https://github.com/xbodya13/visual_limits">addon</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OIR-dPWI-Ak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>When you’re done with constraints,it’s time to run simulation</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Since hitboxes are connected to the bones it doesn’t matter whether you select hitboxes or their bones in pose mode,operator will work.
+Same is true for other operators from ragdoll pie menu.</p>
 </div>
-<div class="section" id="bake">
-<h1>Bake<a class="headerlink" href="#bake" title="Permalink to this headline">¶</a></h1>
-<p>Once you’re satisfied with the animation of the ragdoll,it’s time to bake it to the bones.</p>
-<p>You can do it using <strong>Bake</strong> operator.</p>
-<p><img alt="bake" src="_images/bake.png" /></p>
-<p>It also can be used to copy animation from bones to hitboxes.Just make hitboxes follow bones and chose <strong>Hitboxes animation bake</strong> in operator settings.</p>
+<p>By default, constraints are generated according to the bones hierarchy.
+If bones are not parented to each other ,use different mode. <strong>Selected to active</strong> ,for example</p>
+<p><img alt="constraints_selected_to_active" src="_images/constraints_selected_to_active.png" /></p>
+<p>To set up constraint limits run <strong>Set limits operator</strong> and move hitboxes.</p>
+<p><img alt="limits" src="_images/limits.gif" /></p>
+<p>When you are done,press <code class="docutils literal notranslate"><span class="pre">Esc</span></code></p>
+<p>Also you can copy rigid body constraint settings from active to selected using corresponding operator.
+Adjust copied properties in operator settings,if needed.</p>
+<p><img alt="rbc" src="_images/rbc.png" /></p>
 </div>
-<div class="section" id="disconnect">
-<h1>Disconnect<a class="headerlink" href="#disconnect" title="Permalink to this headline">¶</a></h1>
-<p>If you no longer need hitboxes, select them or their bones and run <strong>Disconnect</strong> operator</p>
-<p><img alt="clear" src="_images/clear.png" /></p>
+<div class="section" id="animation">
+<h1>Animation<a class="headerlink" href="#animation" title="Permalink to this headline">¶</a></h1>
+<p>Suppose,you have a model with animation and you want to enable ragdoll at some frame.</p>
+<p>At first,you need to copy animation from bones to hitboxes.</p>
+<p>To do that,make hitboxes follow bones and make them animated.</p>
+<p><img alt="animated" src="_images/animated.png" /></p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Hold <code class="docutils literal notranslate"><span class="pre">Alt</span></code> when you are changing this property , to change it on all selected objects at once.
+Use this <a class="reference external" href="https://github.com/xbodya13/keyframe_selected">addon</a>  to animate it on selected objects.</p>
+<p>Also,you can manipulate this property from pie menu</p>
+<p class="last"><img alt="animated_pie" src="_images/animated_pie.png" /></p>
 </div>
-<div class="section" id="videos">
-<h1>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h1>
-<p>Check out these videos to see it all in action.</p>
-<p>They were made in Blender 2.79 but the workflow is the same for Blender 2.8x</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H70pNBjUKaE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YqKo6gtr7Ac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p>Bake hitboxes animation using <strong>Bake</strong> operator from pie menu and make bones follow them again.</p>
+<p><img alt="bake_hitboxes" src="_images/bake_hitboxes.png" /></p>
+<p>Snap constraints at the first frame of simulation.</p>
+<p><img alt="simulation_start" src="_images/simulation_start.png" /></p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you snapped constraint or change other physical property and this didn’t affect simulation as expected,try to run <strong>Clear cache</strong> operator</p>
+</div>
+<p>Disable <strong>Animated</strong> property at some frame</p>
+<p><img alt="dynamic" src="_images/dynamic.png" /></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Make sure that animation doesn’t violate constraint limits at this frame.</p>
+</div>
+<p>Bake physics.</p>
+<p>Bake bones animation.</p>
+<p><img alt="bake_bones" src="_images/bake_bones.png" /></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Avoid hitbox intersections,if they are not connected with constraint.
+If they are,you can disable collisions in constraint properties
+<img alt="collisions" src="_images/collisions.png" /></p>
+</div>
+</div>
+<div class="section" id="video">
+<h1>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lobKcsbQqSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Files used in video:</p>
+<p><a class="reference external" href="https://github.com/xbodya13/random/raw/master/sample_static.blend">sample_static.blend</a></p>
+<p><a class="reference external" href="https://github.com/xbodya13/random/raw/master/sample_animated.blend">sample_animated.blend</a></p>
+</div>
 
 
            </div>
