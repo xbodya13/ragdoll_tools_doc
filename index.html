@@ -1,309 +1,296 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Welcome to Ragdoll Tools documentation! &mdash; Ragdoll Tools 1.3 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ragdoll &mdash; Ragdoll Tools 1.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Ragdoll Tools 1.3 documentation" href="#"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=aaadad1f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="#" class="icon icon-home"> Ragdoll Tools
           
-
-          
+          <a href="#" class="icon icon-home">
+            Ragdoll Tools
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Ragdoll Tools documentation!</a></li>
-<li><a class="reference internal" href="#hitboxes">Hitboxes</a></li>
-<li><a class="reference internal" href="#constraints">Constraints</a></li>
-<li><a class="reference internal" href="#animation">Animation</a></li>
-<li><a class="reference internal" href="#video">Video</a></li>
+<li><a class="reference internal" href="#">Ragdoll</a><ul>
+<li><a class="reference internal" href="#make">Make</a></li>
+<li><a class="reference internal" href="#select">Select</a></li>
+<li><a class="reference internal" href="#mirror">Mirror</a></li>
+<li><a class="reference internal" href="#remove">Remove</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hitboxes">Hitboxes</a><ul>
+<li><a class="reference internal" href="#from-mesh">From mesh</a></li>
+<li><a class="reference internal" href="#connect">Connect</a></li>
+<li><a class="reference internal" href="#set-mass">Set mass</a></li>
+<li><a class="reference internal" href="#copy-settings">Copy settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#constraints">Constraints</a><ul>
+<li><a class="reference internal" href="#id1">Make</a></li>
+<li><a class="reference internal" href="#set-limits">Set limits</a></li>
+<li><a class="reference internal" href="#id2">Copy settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#animation">Animation</a><ul>
+<li><a class="reference internal" href="#bake">Bake</a></li>
+<li><a class="reference internal" href="#clear-cache">Clear cache</a></li>
+</ul>
+</li>
 </ul>
 </div>
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">Ragdoll Tools</a>
-        
       </nav>
 
-
-      
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="#">Docs</a> &raquo;</li>
-        
-      <li>Welcome to Ragdoll Tools documentation!</li>
-    
-    
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Ragdoll</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="welcome-to-ragdoll-tools-documentation">
-<h1>Welcome to Ragdoll Tools documentation!<a class="headerlink" href="#welcome-to-ragdoll-tools-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+             
+  <div class="toctree-wrapper compound">
 </div>
-<p>Ragdoll tools is an addon for generating ragdolls in Blender.</p>
-<p>All its function  are collected in one pie menu.</p>
-<p><img alt="pie_menu" src="_images/pie_menu.png" /></p>
-<p>It can be found in the search popup</p>
-<p><img alt="search" src="_images/search.png" /></p>
-<p>To make a ragdoll you need two things:</p>
-<p>1.Generate hitboxes</p>
-<p>2.Connect them with rigid body constraints</p>
+<p><img alt="pie" src="_images/pie.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="hitboxes">
-<h1>Hitboxes<a class="headerlink" href="#hitboxes" title="Permalink to this headline">¶</a></h1>
-<p>To make hitboxes from mesh you need to select mesh object ,armature and run <strong>Make hitboxes</strong> operator from pie menu.
-Here’s how hitboxes look like with different operator settings.</p>
-<p><img alt="shapes" src="_images/shapes.png" /></p>
-<p>Hitbox shape depends on vertex groups.</p>
-<p><img alt="vertex_groups" src="_images/vertex_groups.png" /></p>
-<p>If some bones don’t have vertex groups,try to create them automatically using <strong>Make vertex groups</strong> operator.</p>
-<p>Also,you can generate hitboxes from bones.</p>
-<p><img alt="bones" src="_images/bones.png" /></p>
-<p>Or just take any objects and connect them to the bones using <strong>Connect</strong> operator.
-Each object will be connected to the nearest bone.</p>
+<section id="ragdoll">
+<h1>Ragdoll<a class="headerlink" href="#ragdoll" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="constraints">
-<h1>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h1>
-<p>Select hitboxes and run <strong>Make constraints</strong> operator</p>
-<p><img alt="constraints" src="_images/constraints.png" /></p>
+<section id="make">
+<h2>Make<a class="headerlink" href="#make" title="Link to this heading"></a></h2>
+<p>This operator adds ragdoll rig to selected armatures using a given preset.
+Presets are sorted by similarity to the active armature</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/make.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Any armature rigged with this addon can be used as preset.
+Check <strong>Use as preset</strong> in object settings and it wil appear in the preset list</p>
+<p><img alt="preset" src="_images/preset.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="select">
+<h2>Select<a class="headerlink" href="#select" title="Link to this heading"></a></h2>
+<p>Select anything and this operator will select the rest of the ragdoll rig</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/select.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In operator settings you can change which parts of the rig should be selected</p>
+<p><img alt="select_settings" src="_images/select_settings.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="mirror">
+<h2>Mirror<a class="headerlink" href="#mirror" title="Link to this heading"></a></h2>
+<p>Select what you want to mirror and choose direction</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/mirror.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="remove">
+<h2>Remove<a class="headerlink" href="#remove" title="Link to this heading"></a></h2>
+<p>Select anything that has ragdoll rig and use this operator to remove it</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/remove.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="hitboxes">
+<h1>Hitboxes<a class="headerlink" href="#hitboxes" title="Link to this heading"></a></h1>
+<p>Hitbox shape can be adjusted from hitbox object settings in <strong>Object Mode</strong> or from bone settings in <strong>Pose Mode</strong>.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Since hitboxes are connected to the bones it doesn’t matter whether you select hitboxes or their bones in pose mode,operator will work.
-Same is true for other operators from ragdoll pie menu.</p>
+<p class="admonition-title">Tip</p>
+<p>Hold <code class="docutils literal notranslate"><span class="pre">Alt</span></code> to change settings for all selected hitboxes at once</p>
 </div>
-<p>By default, constraints are generated according to the bones hierarchy.
-If bones are not parented to each other ,use different mode. <strong>Selected to active</strong> ,for example</p>
-<p><img alt="constraints_selected_to_active" src="_images/constraints_selected_to_active.png" /></p>
-<p>To set up constraint limits run <strong>Set limits operator</strong> and move hitboxes.</p>
-<p><img alt="limits" src="_images/limits.gif" /></p>
-<p>When you are done,press <code class="docutils literal notranslate"><span class="pre">Esc</span></code></p>
-<p>Also you can copy rigid body constraint settings from active to selected using corresponding operator.
-Adjust copied properties in operator settings,if needed.</p>
-<p><img alt="rbc" src="_images/rbc.png" /></p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/hit_box_shape.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="animation">
-<h1>Animation<a class="headerlink" href="#animation" title="Permalink to this headline">¶</a></h1>
-<p>Suppose,you have a model with animation and you want to enable ragdoll at some frame.</p>
-<p>At first,you need to copy animation from bones to hitboxes.</p>
-<p>To do that,make hitboxes follow bones and make them animated.</p>
-<p><img alt="animated" src="_images/animated.png" /></p>
+<section id="from-mesh">
+<h2>From mesh<a class="headerlink" href="#from-mesh" title="Link to this heading"></a></h2>
+<p>Select bones in <strong>Pose Mode</strong> then go to <strong>Object Mode</strong> and select mesh objects and armature.
+This operator will make hitboxes for selected bones out of selected meshes.</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/from_mesh.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="connect">
+<h2>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h2>
+<p>Select bones in <strong>Pose Mode</strong> then go to <strong>Object Mode</strong> and select mesh objects and armature.
+This operator will assign every object to the nearest selected bone as a hitbox.</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/connect.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="set-mass">
+<h2>Set mass<a class="headerlink" href="#set-mass" title="Link to this heading"></a></h2>
+<p>Sets mass of selected items proportional to their volumes so their total mass adds up to a given value</p>
+<p><img alt="set_mass" src="_images/set_mass.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="copy-settings">
+<h2>Copy settings<a class="headerlink" href="#copy-settings" title="Link to this heading"></a></h2>
+<p>This operator copies rigid body settings from active to selected</p>
+<p><img alt="copy_rigid_body_settings" src="_images/copy_rigid_body_settings.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="constraints">
+<h1>Constraints<a class="headerlink" href="#constraints" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="id1">
+<h2>Make<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Select bones or hitboxes end this operator will create rigid body constraints between them.</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/make_constraints.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="set-limits">
+<h2>Set limits<a class="headerlink" href="#set-limits" title="Link to this heading"></a></h2>
+<p>Run this operator and move character.
+Constraint limits will be set accordingly to the range of motion</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/constraint_limits.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id2">
+<h2>Copy settings<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>This operator copies rigid body constraints settings from active to selected</p>
+<p><img alt="copy_rigid_body_constraint_settings" src="_images/copy_rigid_body_constraint_settings.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="animation">
+<h1>Animation<a class="headerlink" href="#animation" title="Link to this heading"></a></h1>
+<p>Once you have a ragdoll,play animation.</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/animation_play.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You can make hitboxes softly follow bones .
+To do this use <strong>Follow bone</strong> property.
+To make them follow bones hard use <strong>Animated</strong> property</p>
+<p><img alt="follow_settings" src="_images/follow_settings.png" /></p>
+<p>These properties can be animated</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/fall.webm" type="video/webm"></video></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use this <a class="reference external" href="https://github.com/xbodya13/keyframe_selected">addon</a>  to animate properties for multiple items at once</p>
+</div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p>Hold <code class="docutils literal notranslate"><span class="pre">Alt</span></code> when you are changing this property , to change it on all selected objects at once.
-Use this <a class="reference external" href="https://github.com/xbodya13/keyframe_selected">addon</a>  to animate it on selected objects.</p>
-<p>Also,you can manipulate this property from pie menu</p>
-<p class="last"><img alt="animated_pie" src="_images/animated_pie.png" /></p>
+<p class="admonition-title">Tip</p>
+<p>Change settings like this to enable color coding</p>
+<p><img alt="color_coding" src="_images/color_coding.png" /></p>
 </div>
-<p>Bake hitboxes animation using <strong>Bake</strong> operator from pie menu and make bones follow them again.</p>
-<p><img alt="bake_hitboxes" src="_images/bake_hitboxes.png" /></p>
-<p>Snap constraints at the first frame of simulation.</p>
-<p><img alt="simulation_start" src="_images/simulation_start.png" /></p>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">If you snapped constraint or change other physical property and this didn’t affect simulation as expected,try to run <strong>Clear cache</strong> operator</p>
+<p class="admonition-title">Tip</p>
+<p>If Blender crashes often during simulation try to save/reload before running it</p>
 </div>
-<p>Disable <strong>Animated</strong> property at some frame</p>
-<p><img alt="dynamic" src="_images/dynamic.png" /></p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Make sure that animation doesn’t violate constraint limits at this frame.</p>
+<p>Bake simulation to prevent recalculation on every playback</p>
+<p><img alt="bake_rigid_body" src="_images/bake_rigid_body.png" /></p>
+<section id="bake">
+<h2>Bake<a class="headerlink" href="#bake" title="Link to this heading"></a></h2>
+<p>Use this operator to transfer animation from hitboxes to bones</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%"><source src="_images/bake.webm" type="video/webm"></video></div><div class="line-block">
+<div class="line"><br /></div>
 </div>
-<p>Bake physics.</p>
-<p>Bake bones animation.</p>
-<p><img alt="bake_bones" src="_images/bake_bones.png" /></p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Avoid hitbox intersections,if they are not connected with constraint.
-If they are,you can disable collisions in constraint properties
-<img alt="collisions" src="_images/collisions.png" /></p>
-</div>
-</div>
-<div class="section" id="video">
-<h1>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lobKcsbQqSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Files used in video:</p>
-<p><a class="reference external" href="https://github.com/xbodya13/random/raw/master/sample_static.blend">sample_static.blend</a></p>
-<p><a class="reference external" href="https://github.com/xbodya13/random/raw/master/sample_animated.blend">sample_animated.blend</a></p>
-</div>
+</section>
+<section id="clear-cache">
+<h2>Clear cache<a class="headerlink" href="#clear-cache" title="Link to this heading"></a></h2>
+<p>Removes rigid body cache</p>
+</section>
+</section>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, xbodya13.
-
-    </p>
+    <p>&#169; Copyright 2025, xbodya13.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.3',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

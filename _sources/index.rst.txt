@@ -1,201 +1,283 @@
 .. Ragdoll Tools documentation master file, created by
-   sphinx-quickstart on Fri May  1 18:31:15 2020.
+   sphinx-quickstart on Mon May 19 14:49:12 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Ragdoll Tools documentation!
-=======================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-.. |test| image:: test.png
+
+
+
+.. |preset| image:: preset.png
+
+.. |select_settings| image:: select_settings.png
+
+.. |set_mass| image:: set_mass.png
+
+.. |copy_rigid_body_settings| image:: copy_rigid_body_settings.png
+
+.. |copy_rigid_body_constraint_settings| image:: copy_rigid_body_constraint_settings.png
+
+.. |follow_settings| image:: follow_settings.png
+
+.. |color_coding| image:: color_coding.png
+
+.. |bake_rigid_body| image:: bake_rigid_body.png
+
+.. |pie| image:: pie.png
+
+
+
+|pie|
+
+
+
+|
+
+Ragdoll
+=======
+
+|
+
+Make
+----
+
+This operator adds ragdoll rig to selected armatures using a given preset.
+Presets are sorted by similarity to the active armature
+
+
+.. video:: make.webm
+   :align: center
    :width: 100%
 
-.. |pie_menu| image:: pie_menu.png
+|
 
-.. |search| image:: search.png
-.. |shapes| image:: shapes.png
-.. |vertex_groups| image:: vertex_groups.png
-.. |bones| image:: bones.png
-.. |constraints| image:: constraints.png
-.. |constraints_selected_to_active| image:: constraints_selected_to_active.png
-.. |limits| image:: limits.gif
-.. |rbc| image:: rbc.png
-.. |animated| image:: animated.png
-.. |animated_pie| image:: animated_pie.png
-.. |bake_hitboxes| image:: bake_hitboxes.png
-.. |simulation_start| image:: simulation_start.png
-.. |dynamic| image:: dynamic.png
-.. |bake_bones| image:: bake_bones.png
-.. |collisions| image:: collisions.png
+Any armature rigged with this addon can be used as preset.
+Check **Use as preset** in object settings and it wil appear in the preset list
+
+|preset|
 
 
+|
 
-Ragdoll tools is an addon for generating ragdolls in Blender.
+Select
+------
 
-All its function  are collected in one pie menu.
+Select anything and this operator will select the rest of the ragdoll rig
 
-|pie_menu|
+.. video:: select.webm
+   :align: center
+   :width: 100%
 
+|
 
-It can be found in the search popup
+In operator settings you can change which parts of the rig should be selected
 
-|search|
-
-
-
-To make a ragdoll you need two things:
-
-1.Generate hitboxes
-
-2.Connect them with rigid body constraints
+|select_settings|
 
 
+|
 
+Mirror
+------
+
+Select what you want to mirror and choose direction
+
+.. video:: mirror.webm
+   :align: center
+   :width: 100%
+
+|
+
+Remove
+------
+
+Select anything that has ragdoll rig and use this operator to remove it
+
+.. video:: remove.webm
+   :align: center
+   :width: 100%
+
+|
+|
+|
+|
 
 Hitboxes
 ========
-To make hitboxes from mesh you need to select mesh object ,armature and run **Make hitboxes** operator from pie menu.
-Here's how hitboxes look like with different operator settings.
 
-|shapes|
+Hitbox shape can be adjusted from hitbox object settings in **Object Mode** or from bone settings in **Pose Mode**.
 
-Hitbox shape depends on vertex groups.
+.. tip::
+   Hold ``Alt`` to change settings for all selected hitboxes at once
 
-|vertex_groups|
-
-If some bones don't have vertex groups,try to create them automatically using **Make vertex groups** operator.
-
-
-Also,you can generate hitboxes from bones.
-
-|bones|
-
-Or just take any objects and connect them to the bones using **Connect** operator.
-Each object will be connected to the nearest bone.
+.. video:: hit_box_shape.webm
+   :align: center
+   :width: 100%
 
 
+|
 
+From mesh
+---------
+
+Select bones in **Pose Mode** then go to **Object Mode** and select mesh objects and armature.
+This operator will make hitboxes for selected bones out of selected meshes.
+
+.. video:: from_mesh.webm
+   :align: center
+   :width: 100%
+
+
+|
+
+Connect
+-------
+
+Select bones in **Pose Mode** then go to **Object Mode** and select mesh objects and armature.
+This operator will assign every object to the nearest selected bone as a hitbox.
+
+.. video:: connect.webm
+   :align: center
+   :width: 100%
+
+
+|
+
+Set mass
+--------
+
+Sets mass of selected items proportional to their volumes so their total mass adds up to a given value
+
+|set_mass|
+
+
+|
+
+Copy settings
+-------------
+
+This operator copies rigid body settings from active to selected
+
+|copy_rigid_body_settings|
+
+|
+|
+|
+|
 
 Constraints
 ===========
-Select hitboxes and run **Make constraints** operator
 
-|constraints|
+|
 
-.. tip::
-   Since hitboxes are connected to the bones it doesn't matter whether you select hitboxes or their bones in pose mode,operator will work.
-   Same is true for other operators from ragdoll pie menu.
+Make
+----
 
-
-By default, constraints are generated according to the bones hierarchy.
-If bones are not parented to each other ,use different mode. **Selected to active** ,for example
-
-|constraints_selected_to_active|
+Select bones or hitboxes end this operator will create rigid body constraints between them.
 
 
-To set up constraint limits run **Set limits operator** and move hitboxes.
-
-|limits|
-
-When you are done,press ``Esc``
-
-Also you can copy rigid body constraint settings from active to selected using corresponding operator.
-Adjust copied properties in operator settings,if needed.
+.. video:: make_constraints.webm
+   :align: center
+   :width: 100%
 
 
-|rbc|
+
+|
+
+Set limits
+----------
+
+Run this operator and move character.
+Constraint limits will be set accordingly to the range of motion
+
+.. video:: constraint_limits.webm
+   :align: center
+   :width: 100%
+
+
+
+|
+
+Copy settings
+-------------
+
+This operator copies rigid body constraints settings from active to selected
+
+|copy_rigid_body_constraint_settings|
+
+
+
+
+|
+|
+|
+|
 
 Animation
 =========
-Suppose,you have a model with animation and you want to enable ragdoll at some frame.
+
+Once you have a ragdoll,play animation.
+
+.. video:: animation_play.webm
+   :align: center
+   :width: 100%
+
+|
+
+You can make hitboxes softly follow bones .
+To do this use **Follow bone** property.
+To make them follow bones hard use **Animated** property
+
+|follow_settings|
 
 
+These properties can be animated
 
+.. video:: fall.webm
+   :align: center
+   :width: 100%
 
-At first,you need to copy animation from bones to hitboxes.
-
-To do that,make hitboxes follow bones and make them animated.
-
-|animated|
 
 
 .. tip::
-   Hold ``Alt`` when you are changing this property , to change it on all selected objects at once.
-   Use this `addon <https://github.com/xbodya13/keyframe_selected>`_  to animate it on selected objects.
+   Use this `addon <https://github.com/xbodya13/keyframe_selected>`_  to animate properties for multiple items at once
 
-   Also,you can manipulate this property from pie menu
+.. tip::
+   Change settings like this to enable color coding
 
-   |animated_pie|
-
-
-
-
-Bake hitboxes animation using **Bake** operator from pie menu and make bones follow them again.
-
-|bake_hitboxes|
-
-Snap constraints at the first frame of simulation.
-
-|simulation_start|
+   |color_coding|
 
 
 .. tip::
-   If you snapped constraint or change other physical property and this didn't affect simulation as expected,try to run **Clear cache** operator
+   If Blender crashes often during simulation try to save/reload before running it
 
 
 
-Disable **Animated** property at some frame
+Bake simulation to prevent recalculation on every playback
 
-
-|dynamic|
-
-.. important::
-   Make sure that animation doesn't violate constraint limits at this frame.
+|bake_rigid_body|
 
 
 
+Bake
+----
 
+Use this operator to transfer animation from hitboxes to bones
 
-Bake physics.
+.. video:: bake.webm
+   :align: center
+   :width: 100%
 
+|
 
+Clear cache
+-----------
 
-Bake bones animation.
-
-
-|bake_bones|
-
-
-
-.. important::
-   Avoid hitbox intersections,if they are not connected with constraint.
-   If they are,you can disable collisions in constraint properties
-   |collisions|
-
-
-
-Video
-=====
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/lobKcsbQqSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-Files used in video:
-
-`sample_static.blend <https://github.com/xbodya13/random/raw/master/sample_static.blend>`_
-
-`sample_animated.blend <https://github.com/xbodya13/random/raw/master/sample_animated.blend>`_
-
-
-
-
-
+Removes rigid body cache
 
 
 
